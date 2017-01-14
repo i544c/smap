@@ -25,7 +25,7 @@ def smari(request):
         try:
             new_sumari = Sumari(name=name, message=message, lat=lat, lng=lng)
             new_sumari.save()
-            for tagname in tags:
+            for tagname in tags.split(','):
                 tag = Tag.get_or_create(tagname)
                 new_sumari.tags.add(tag)
             new_sumari.save()
@@ -57,7 +57,10 @@ def update_sumari(request, id):
         for key in data.keys():
             if key == "tags":
                 sumari.tags.clear()
-                sumari.tags.add([Tag.get_or_create(tag) for tag in data[key].split(',')])
+                if ',' in data[key]:
+                    sumari.tags.add([Tag.get_or_create(tag) for tag in data[key].split(',')])
+                else:
+                    sumari.tags.add(Tag.get_or_create(data[key]))
             elif key == "name":
                 sumari.name = data[key]
             elif key == "message":

@@ -127,4 +127,5 @@ class DisableMigrations(object):
     def __getitem__(self, item):
         return "notmigrations"
 
-MIGRATION_MODULES = DisableMigrations()
+# Uncomment this if you want to test
+# MIGRATION_MODULES = DisableMigrations()

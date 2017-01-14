@@ -25,6 +25,7 @@ class Sumari(models.Model):
 
     def to_json(self):
         obj = {
+            "id": self.id,
             "name": self.name,
             "position": {
                 "lat": float(self.lat),

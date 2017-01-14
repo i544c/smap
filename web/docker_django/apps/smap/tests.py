@@ -189,6 +189,7 @@ class Test(TestCase):
         self.create_data(data)
         json_objs = Sumari.search_with_tags(tags=["meshi"], to_json=True)
         self.assertSetEqual({sumari["name"] for sumari in json_objs}, {"山岡屋", "すしろー"})
+        self.assertEqual(len([sumari["id"] for sumari in json_objs]), 2)
 
     def test_search_with_tags_not_exist_and_get_as_json(self):
         data = [

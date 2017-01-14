@@ -5,35 +5,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="svg2"
-   viewBox="0 0 535.00001 512.00001"
-   height="512"
    width="535"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="SMAru.svg">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="740"
-     inkscape:window-height="480"
-     id="namedview5292"
-     showgrid="false"
-     inkscape:zoom="0.4609375"
-     inkscape:cx="267.5"
-     inkscape:cy="256"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" />
+   height="512"
+   viewBox="0 0 535.00001 512.00001"
+   id="svg2"
+   version="1.1">
   <defs
      id="defs4" />
   <metadata
@@ -44,206 +20,220 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(0,-540.36157)"
-     style="display:inline"
-     id="layer1">
+     id="layer1"
+     style="display:inline;fill:#ffffff"
+     transform="translate(0,-540.36157)">
     <g
-       style="opacity:0.5;fill:#000000;stroke:none"
+       transform="matrix(0.91997087,0,0,0.91997087,-2.958303,43.843334)"
        id="g4381"
-       transform="matrix(0.91997087,0,0,0.91997087,-2.958303,43.843334)">
+       style="opacity:0.5;fill:#ffffff;stroke:none">
       <path
-         transform="matrix(1.0869909,0,0,1.0869909,-105.48345,359.18787)"
-         id="path4224"
+         style="fill:#ffffff;stroke:none;stroke-width:0.69655102"
          d="m 317.78516,196.78906 c -0.0519,20.54171 -0.0542,40.68783 -0.0391,60.60547 a 34.477518,32.36665 0 0 1 0.004,0 l 0.0352,-60.60547 z m 0,0 c -29.71975,0 -55.0273,10.33152 -75.92383,30.9961 -20.89653,20.66458 -31.34571,45.62571 -31.34571,74.88086 0,17.64572 8.93999,47.13247 26.81836,88.46093 17.87838,41.32916 52.59737,128.70199 72.83008,161.25 1.04236,1.67683 6.2687,0.0993 7.41016,-0.82226 l -0.002,1.6914 c 0.008,-0.55718 0.0134,-1.14755 0.0215,-1.70703 0.0906,-0.0755 0.16187,-0.14692 0.19141,-0.21094 l -0.0176,-13.54296 c 0.68228,-60.96278 0.3249,-134.92274 0.10156,-215.67774 a 34.477518,32.36665 0 0 1 -0.1582,-0.008 l -0.0684,113.49805 -0.14063,-113.50782 A 34.477518,32.36665 0 0 1 283.61914,289.75 a 34.477518,32.36665 0 0 1 33.875,-32.34766 l 0.29102,-60.61328 z"
-         style="fill:#000000;stroke:none;stroke-width:0.69655102" />
+         id="path4224"
+         transform="matrix(1.0869909,0,0,1.0869909,-105.48345,359.18787)" />
       <g
-         transform="matrix(6.4209913,0,0,6.4705662,502.92786,479.64387)"
+         style="fill:#ffffff;stroke:none"
          id="g4201"
-         style="fill:#000000;stroke:none">
+         transform="matrix(6.4209913,0,0,6.4705662,502.92786,479.64387)">
         <path
-           d="m -19.690172,39.486958 10.6100009,-15.434 c 0.21,-0.306 0.233,-0.703 0.061,-1.032 -0.173,-0.328 -0.514,-0.534 -0.885,-0.534 l -16.5574509,0 0,-4 c 0,-0.553 -0.447,-1 -1,-1 l -12.509969,0 0,-2 c 0,-0.553 -0.465985,-0.61084 -1.018985,-0.61084 -0.553,0 -0.981015,0.05784 -0.981015,0.61084 l 0,3 0,29 0,26 c 0,0.553 0.447,1 1,1 0.553,0 1,-0.447 1,-1 l 0,-25 2.535969,0 c -0.635,0.838 -1.026,1.87 -1.026,3 0,2.757 2.243,5 5,5 l 23.5574509,0 c 0.371,0 0.712,-0.206 0.885,-0.534 0.173,-0.329 0.149,-0.727 -0.061,-1.032 z m -20.281419,-20 11.509969,0 0,4 0,23 -5,0 -6.509969,0 z m 6.509969,35 c -1.654,0 -3,-1.346 -3,-3 0,-1.654 1.346,-3 3,-3 l 6,0 c 0.553,0 0.99433,-0.447029 1,-1 l 0,-23 14.656451,0 -9.923001,14.434 c -0.234,0.341 -0.234,0.792 0,1.133 l 9.923001,14.433 z"
+           style="fill:#ffffff;stroke:none"
            id="path4163"
-           style="fill:#000000;stroke:none" />
+           d="m -19.690172,39.486958 10.6100009,-15.434 c 0.21,-0.306 0.233,-0.703 0.061,-1.032 -0.173,-0.328 -0.514,-0.534 -0.885,-0.534 l -16.5574509,0 0,-4 c 0,-0.553 -0.447,-1 -1,-1 l -12.509969,0 0,-2 c 0,-0.553 -0.465985,-0.61084 -1.018985,-0.61084 -0.553,0 -0.981015,0.05784 -0.981015,0.61084 l 0,3 0,29 0,26 c 0,0.553 0.447,1 1,1 0.553,0 1,-0.447 1,-1 l 0,-25 2.535969,0 c -0.635,0.838 -1.026,1.87 -1.026,3 0,2.757 2.243,5 5,5 l 23.5574509,0 c 0.371,0 0.712,-0.206 0.885,-0.534 0.173,-0.329 0.149,-0.727 -0.061,-1.032 z m -20.281419,-20 11.509969,0 0,4 0,23 -5,0 -6.509969,0 z m 6.509969,35 c -1.654,0 -3,-1.346 -3,-3 0,-1.654 1.346,-3 3,-3 l 6,0 c 0.553,0 0.99433,-0.447029 1,-1 l 0,-23 14.656451,0 -9.923001,14.434 c -0.234,0.341 -0.234,0.792 0,1.133 l 9.923001,14.433 z" />
         <g
-           id="g4165"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4165" />
         <g
-           id="g4167"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4167" />
         <g
-           id="g4169"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4169" />
         <g
-           id="g4171"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4171" />
         <g
-           id="g4173"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4173" />
         <g
-           id="g4175"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4175" />
         <g
-           id="g4177"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4177" />
         <g
-           id="g4179"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4179" />
         <g
-           id="g4181"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4181" />
         <g
-           id="g4183"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4183" />
         <g
-           id="g4185"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4185" />
         <g
-           id="g4187"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4187" />
         <g
-           id="g4189"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4189" />
         <g
-           id="g4191"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4191" />
         <g
-           id="g4193"
-           style="fill:#000000;stroke:none" />
+           style="fill:#ffffff;stroke:none"
+           id="g4193" />
       </g>
     </g>
     <g
-       id="g4226"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4226" />
     <g
-       id="g4228"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4228" />
     <g
-       id="g4230"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4230" />
     <g
-       id="g4232"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4232" />
     <g
-       id="g4234"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4234" />
     <g
-       id="g4236"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4236" />
     <g
-       id="g4238"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4238" />
     <g
-       id="g4240"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4240" />
     <g
-       id="g4242"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4242" />
     <g
-       id="g4244"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4244" />
     <g
-       id="g4246"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4246" />
     <g
-       id="g4248"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4248" />
     <g
-       id="g4250"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4250" />
     <g
-       id="g4252"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4252" />
     <g
-       id="g4254"
-       transform="translate(86.777489,-230.08893)" />
+       style="fill:#ffffff"
+       transform="translate(86.777489,-230.08893)"
+       id="g4254" />
   </g>
   <g
-     id="layer2"
-     style="display:inline"
-     transform="matrix(-1,0,0,1,526.89092,-537.55617)">
+     transform="matrix(-1,0,0,1,526.89092,-537.55617)"
+     style="display:inline;stroke:#ffffff"
+     id="layer2">
     <g
-       id="g4444"
+       style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
        transform="matrix(0.9718995,0,0,0.9623335,7.627976,550.31319)"
-       style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none">
+       id="g4444">
       <g
-         id="g4403"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none">
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4403">
         <g
-           id="messenger"
-           style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none">
+           style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+           id="messenger">
           <path
-             inkscape:connector-curvature="0"
-             id="path4406"
+             style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
              d="M 459,0 51,0 C 22.95,0 0,22.95 0,51 l 0,459 102,-102 357,0 c 28.05,0 51,-22.95 51,-51 L 510,51 C 510,22.95 487.05,0 459,0 Z"
-             style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+             id="path4406" />
         </g>
       </g>
       <g
-         id="g4408"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4408" />
       <g
-         id="g4410"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4410" />
       <g
-         id="g4412"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4412" />
       <g
-         id="g4414"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4414" />
       <g
-         id="g4416"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4416" />
       <g
-         id="g4418"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4418" />
       <g
-         id="g4420"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4420" />
       <g
-         id="g4422"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4422" />
       <g
-         id="g4424"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4424" />
       <g
-         id="g4426"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4426" />
       <g
-         id="g4428"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4428" />
       <g
-         id="g4430"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4430" />
       <g
-         id="g4432"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4432" />
       <g
-         id="g4434"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4434" />
       <g
-         id="g4436"
-         style="fill:none;stroke:#000000;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:15.51021385;stroke-miterlimit:4;stroke-dasharray:none"
+         id="g4436" />
     </g>
   </g>
   <g
-     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     id="text4417">
+     id="text4417"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
     <path
-       d="m 190.65,264.07141 c -15.6,-13.95 -35.25,-28.65 -51.45,-39 11.55,-13.8 21.45,-29.55 29.55,-47.25 l -12.15,-15.75 -81.9,6.15 4.5,14.55 61.95,0 c -14.55,34.95 -43.35,63.9 -83.7,90.75 l 7.8,9.75 c 25.35,-13.2 47.4,-29.25 65.85,-49.05 14.85,13.05 29.4,30.15 42.45,49.2 l 17.1,-19.35 z"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:150px;font-family:'FOT-HERocknRoll Std';-inkscape-font-specification:'FOT-HERocknRoll Std Semi-Bold'"
-       id="path5857" />
+       id="path5857"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:150px;font-family:'FOT-HERocknRoll Std';-inkscape-font-specification:'FOT-HERocknRoll Std Semi-Bold';fill:#ffffff"
+       d="m 190.65,264.07141 c -15.6,-13.95 -35.25,-28.65 -51.45,-39 11.55,-13.8 21.45,-29.55 29.55,-47.25 l -12.15,-15.75 -81.9,6.15 4.5,14.55 61.95,0 c -14.55,34.95 -43.35,63.9 -83.7,90.75 l 7.8,9.75 c 25.35,-13.2 47.4,-29.25 65.85,-49.05 14.85,13.05 29.4,30.15 42.45,49.2 l 17.1,-19.35 z" />
     <path
-       d="m 300.3,264.67141 c -5.7,-7.05 -11.55,-13.65 -17.4,-19.8 21.45,-17.85 39.6,-36.6 56.4,-60.3 l -12.6,-16.95 -118.2,5.7 4.5,14.25 96,0 c -7.5,15.3 -20.7,32.55 -35.25,48.3 -8.55,-8.55 -17.4,-16.2 -26.25,-23.55 l -9.75,6.75 c 16.35,19.05 28.2,37.65 40.8,61.95 l 21.75,-16.35 z"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:150px;font-family:'FOT-HERocknRoll Std';-inkscape-font-specification:'FOT-HERocknRoll Std Semi-Bold'"
-       id="path5859" />
+       id="path5859"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:150px;font-family:'FOT-HERocknRoll Std';-inkscape-font-specification:'FOT-HERocknRoll Std Semi-Bold';fill:#ffffff"
+       d="m 300.3,264.67141 c -5.7,-7.05 -11.55,-13.65 -17.4,-19.8 21.45,-17.85 39.6,-36.6 56.4,-60.3 l -12.6,-16.95 -118.2,5.7 4.5,14.25 96,0 c -7.5,15.3 -20.7,32.55 -35.25,48.3 -8.55,-8.55 -17.4,-16.2 -26.25,-23.55 l -9.75,6.75 c 16.35,19.05 28.2,37.65 40.8,61.95 l 21.75,-16.35 z" />
     <path
-       d="m 436.35,254.47141 c -8.55,-12.15 -22.5,-18.6 -32.85,-18.6 -15.45,0 -26.1,9.3 -26.1,22.8 0,13.35 12.9,25.65 33.75,25.65 21.9,0 43.05,-9.3 54.15,-21.6 8.25,-9.3 12.3,-19.35 12.3,-28.5 0,-18 -15.6,-33 -46.35,-33 -5.7,0 -16.95,1.35 -23.1,4.5 l 43.95,-31.65 -7.8,-16.5 -64.5,5.85 4.2,12.15 38.1,0 -57.6,48.75 12.45,10.35 c 13.65,-11.7 36.3,-20.1 54,-20.1 16.05,0 25.65,9.15 25.65,20.55 0,5.1 -1.95,10.65 -6.15,16.05 -9,11.7 -24.3,18.6 -39.6,18.6 -8.85,0 -15.6,-4.8 -15.6,-10.35 0,-5.55 3.45,-7.8 8.85,-7.8 7.95,0 16.05,5.1 23.4,13.35 l 8.85,-10.5 z"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:150px;font-family:'FOT-HERocknRoll Std';-inkscape-font-specification:'FOT-HERocknRoll Std Semi-Bold'"
-       id="path5861" />
+       id="path5861"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:150px;font-family:'FOT-HERocknRoll Std';-inkscape-font-specification:'FOT-HERocknRoll Std Semi-Bold';fill:#ffffff"
+       d="m 436.35,254.47141 c -8.55,-12.15 -22.5,-18.6 -32.85,-18.6 -15.45,0 -26.1,9.3 -26.1,22.8 0,13.35 12.9,25.65 33.75,25.65 21.9,0 43.05,-9.3 54.15,-21.6 8.25,-9.3 12.3,-19.35 12.3,-28.5 0,-18 -15.6,-33 -46.35,-33 -5.7,0 -16.95,1.35 -23.1,4.5 l 43.95,-31.65 -7.8,-16.5 -64.5,5.85 4.2,12.15 38.1,0 -57.6,48.75 12.45,10.35 c 13.65,-11.7 36.3,-20.1 54,-20.1 16.05,0 25.65,9.15 25.65,20.55 0,5.1 -1.95,10.65 -6.15,16.05 -9,11.7 -24.3,18.6 -39.6,18.6 -8.85,0 -15.6,-4.8 -15.6,-10.35 0,-5.55 3.45,-7.8 8.85,-7.8 7.95,0 16.05,5.1 23.4,13.35 l 8.85,-10.5 z" />
   </g>
 </svg>

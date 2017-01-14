@@ -66,6 +66,15 @@ def update_sumari(request, id):
         return JsonResponse(sumari.to_json())
 
 
+@csrf_exempt
+def good(request, id):
+    if request.method == "POST":
+        sumari = Sumari.objects.get(pk=id)
+        sumari.good += 1
+        sumari.save()
+        return JsonResponse(sumari.to_json(), safe=False)
+
+
 def tag(request):
     if request.method == "GET":
         tag_list = [tag.name for tag in Tag.objects.all()]

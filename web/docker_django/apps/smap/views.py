@@ -13,7 +13,6 @@ def home(request):
 def smari(request):
     if request.method == 'POST':
         data = json.loads(request.body.decode("utf-8"))
-        print(data)
         try:
             name = data["name"]
             message = data["message"]
@@ -33,7 +32,17 @@ def smari(request):
 
         except Exception as e:
             return JsonResponse({"status": str(e)})
-    return JsonResponse({"status": "ok"})
+        return JsonResponse({"status": "ok"})
+
+    elif request.method == 'GET':
+        tags = request.GET.get('tags', None)
+        if not tags:
+            json_objs = [sumari.to_json() for sumari in Sumari.objects.all()]
+            return JsonResponse(json_objs, safe=False)
+
+        tags = tags.split(",")
+        sumari_list = Sumari.search_with_tags(tags=tags, to_json=True)
+        return JsonResponse(sumari_list, safe=False)
 
 
 def hakodate_mock(reqest):

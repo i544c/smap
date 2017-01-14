@@ -1,0 +1,92 @@
+#map {
+  width: 100%;
+  height: 100vh; }
+
+body, p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif; }
+
+a {
+  text-decoration: none; }
+  a:link {
+    color: #000; }
+  a:visited {
+    color: #000; }
+  a:hover {
+    color: #000; }
+  a:active {
+    color: #000; }
+
+.topHud {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+  text-align: center; }
+  .topHud__title {
+    padding-top: 11px; }
+
+.bottomHud {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #000; }
+
+.smaru {
+  margin: -40px auto 0;
+  width: 80px; }
+  .smaru a {
+    width: 100%; }
+    .smaru a img {
+      width: 100%; }
+
+.pinchBtn {
+  margin: 0 auto;
+  width: 96%;
+  display: flex;
+  justify-content: space-between; }
+  .pinchBtn__each {
+    width: 49%;
+    padding: 8px 0;
+    background-color: #fff;
+    text-align: center;
+    font-size: 20px; }
+    .pinchBtn__each a {
+      display: block;
+      width: 100%;
+      height: 100%; }
+
+.insma {
+  z-index: 3;
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .insma__lead {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff; }
+  .insma__message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px; }
+  .insma__tags {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px; }
+  .insma__btn {
+    margin: 30px auto 0;
+    max-width: 100px;
+    width: 30%; }
+    .insma__btn img {
+      width: 100%; }

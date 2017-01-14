@@ -24,18 +24,28 @@ function errorFunc() {
 }
 
 /**
-* 現在地を取得する。
+* 現在地を取得する
 */
 function getLocation() {
   if(!isGeo) return;
   navigator.geolocation.getCurrentPosition(successFunc, errorFunc);
-  return ;
 }
 
+/**
+* 現在地を反映する
+*/
 function initMap() {
   var opts = {
     zoom: 15,
     center: new google.maps.LatLng(lat, lng)
   };
   var map = new google.maps.Map(mapArea, opts);
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: {
+      lat: 41.773809,
+      lng: 140.726467
+    }
+  });
 }

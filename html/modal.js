@@ -90,6 +90,32 @@ $(".modal__open").click( function(){
 			return;
 		});
 	});
+
+	$("#seabtn").click(function() {
+		console.log("タグ検索");
+		var seatag = document.getElementById("seatag").value;
+		console.log(seatag);
+		if(!seatag) {
+			alert("tagを入力してください");
+			return;
+		}
+
+		$.ajax({
+			url:"sumari",
+			type:"GET",
+			data: {
+				"tags": seatag
+			}
+		}).done(function(res) {
+			console.log("success!");
+			seatag = "";
+			closeModal();
+		}).fail(function(err) {
+			alert(err);
+			return;
+		});
+	});
+
 	//[#modal__overlay]、または[#modal__close]をクリックしたら…
 	$( ".modal__close" ).unbind().click( function(){
 		closeModal();

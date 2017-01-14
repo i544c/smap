@@ -49,7 +49,8 @@ function makeMarker(title, position) {
   return new google.maps.Marker({
     map: map,
     title: title,
-    position: position
+    position: position,
+    animation: google.maps.Animation.DROP
   });
 }
 

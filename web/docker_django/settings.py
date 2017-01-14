@@ -128,4 +128,4 @@ class DisableMigrations(object):
         return "notmigrations"
 
 # Uncomment this if you want to test
-MIGRATION_MODULES = DisableMigrations()
+# MIGRATION_MODULES = DisableMigrations()

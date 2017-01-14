@@ -27,25 +27,26 @@ a {
 
 .topHud {
   z-index: 1;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #000;
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-    &__title {
-      padding-top: 11px; 
-    }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  &__title {
+    padding-top: 11px; 
+  }
 }
 
 .bottomHud {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #000;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #000;
 }
 
 .smaru {
@@ -66,14 +67,48 @@ a {
   justify-content: space-between;
   &__each {
     width: 49%;
-    padding: 5px 0;
+    padding: 8px 0;
     background-color: #fff;
     text-align: center;
     font-size: 20px;
     a {
       display: block;
-      width: 100;
+      width: 100%;
       height: 100%;
+    }
+  }
+}
+
+.insma {
+  z-index: 3;
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(#000, 0.8);
+  &__lead {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+  }
+  &__message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+  &__tags {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+  }
+  &__btn {
+    margin: 30px auto 0;
+    max-width: 100px;
+    width: 30%;
+    img {
+      width: 100%;
     }
   }
 }

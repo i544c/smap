@@ -90,12 +90,10 @@ $(".modal__open").click( function(){
 			return;
 		});
 	});
-/*
 	//[#modal__overlay]、または[#modal__close]をクリックしたら…
-	$( ".modal__overlay,.modal__close" ).unbind().click( function(){
+	$( ".modal__close" ).unbind().click( function(){
 		closeModal();
 	} ) ;
-	*/
 
 	function closeModal() {
 		//[#modal__content]と[#modal__overlay]をフェードアウトした後に…

@@ -45,6 +45,27 @@ def smari(request):
         return JsonResponse(sumari_list, safe=False)
 
 
+@csrf_exempt
+def update_sumari(request, id):
+    if request.method == "GET":
+        sumari = Sumari.objects.get(pk=id)
+        return JsonResponse(sumari.to_json())
+
+    elif request.method == "PUT":
+        sumari = Sumari.objects.get(pk=id)
+        data = json.loads(request.body.decode("utf-8"))
+        for key in data.keys():
+            if key == "tags":
+                sumari.tags.clear()
+                sumari.tags.add([Tag.get_or_create(tag) for tag in data[key].split(',')])
+            elif key == "name":
+                sumari.name = data[key]
+            elif key == "message":
+                sumari.message = data[key]
+        sumari.save()
+        return JsonResponse(sumari.to_json())
+
+
 def tag(request):
     if request.method == "GET":
         tag_list = [tag.name for tag in Tag.objects.all()]

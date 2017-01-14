@@ -189,6 +189,7 @@ class Test(TestCase):
         self.create_data(data)
         json_objs = Sumari.search_with_tags(tags=["meshi"], to_json=True)
         self.assertSetEqual({sumari["name"] for sumari in json_objs}, {"山岡屋", "すしろー"})
+        self.assertEqual(len([sumari["id"] for sumari in json_objs]), 2)
 
     def test_search_with_tags_not_exist_and_get_as_json(self):
         data = [
@@ -274,3 +275,66 @@ class Test(TestCase):
         client = Client()
         response = client.get('/tag')
         self.assertSetEqual({sumari for sumari in response.json()}, {"meshi", "ramen", "sushi"})
+
+    def test_get_sumari_id(self):
+        data = [
+            {
+                "tags": {
+                    "meshi",
+                    "ramen"
+                },
+                "name": "山岡屋",
+                "message": "山岡屋うまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            },
+            {
+                "tags": {
+                    "meshi",
+                    "sushi"
+                },
+                "name": "すしろー",
+                "message": "すしうまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            }
+        ]
+        self.create_data(data)
+        client = Client()
+        id = Sumari.search_with_tags(tags=["sushi"]).first().id
+        response = client.get('/sumari/{}'.format(id))
+        self.assertEqual(response.json()["name"], "すしろー")
+
+    def test_update_sumari(self):
+        data = [
+            {
+                "tags": {
+                    "meshi",
+                    "ramen"
+                },
+                "name": "山岡屋",
+                "message": "山岡屋うまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            },
+            {
+                "tags": {
+                    "meshi",
+                    "sushi"
+                },
+                "name": "すしろー",
+                "message": "すしうまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            }
+        ]
+        self.create_data(data)
+        client = Client()
+        id = Sumari.search_with_tags(tags=["sushi"]).first().id
+        json_data = {
+            "name": "くらずし"
+        }
+        response = client.put('/sumari/{}'.format(id),  json.dumps(json_data),
+                                content_type="application/json")
+        name = Sumari.search_with_tags(tags=["sushi"]).first().name
+        self.assertEqual(name, "くらずし")

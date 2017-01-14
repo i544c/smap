@@ -70,18 +70,22 @@ $(".modal__open").click( function(){
 			return;
 		}
 
-
 		$.ajax({
-			url:"sumari",
+			url:"/sumari/",
 			type:"POST",
-			data: {
-				"position": {
-					"lat": lat,
-					"lng": lng
-				},
-				"message": message,
-				"tags": tags
-			}
+			data : JSON.stringify(
+				{
+					"name": "",
+					"position": {
+						"lat": lat,
+						"lng": lng
+					},
+					"message": message,
+					"tags": tags
+				}
+			),
+			contentType: 'application/JSON',
+			dataType : 'JSON'
 		}).done(function(res) {
 			console.log("success!");
 			message = "", tags = "";
@@ -102,7 +106,7 @@ $(".modal__open").click( function(){
 		}
 
 		$.ajax({
-			url:"sumari",
+			url:"/sumari/",
 			type:"GET",
 			data: {
 				"tags": seatag

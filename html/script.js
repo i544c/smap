@@ -37,7 +37,7 @@ function getLocation() {
 */
 function getData() {
   return $.ajax({
-    url: "/sumari/",
+    url: "/sumari",
     type: "get"
   });
 }

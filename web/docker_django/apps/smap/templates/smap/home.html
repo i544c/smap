@@ -12,7 +12,9 @@
 </head>
 <body>
   <header class="topHud">
-    <p class="topHud__title">Share-Map</div>
+    <div class="topHud__icon"><a class="modal__open" data-target="seasma"><img src="{% static 'smap/img/search.svg' %}" alt="検索"></a></div>
+    <p class="topHud__title">Share-Map</p>
+    <div class="topHud__icon"><a class="modal__open" data-target="about"><img src="{% static 'smap/img/about.svg' %}" alt="概要"></a></div>
   </header>
   <main>
     <div id="map"></div>
@@ -21,15 +23,40 @@
       async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP7y4SQBi2YjkNenggVRJCkl8aWmTS38s&callback=getLocation">
     </script>
-    <div id="insma" class="insma">
-      <p class="insma__lead">スマる</p>
-      <div class="insma__message">
-        <textarea name="message" cols="30" rows="15" placeholder="input すまり"></textarea>
+    <div id="insma" class="sma">
+      <p class="sma__lead">スマる</p>
+      <div class="sma__message">
+        <textarea id="message" cols="30" rows="15" placeholder="input すまり"></textarea>
       </div>
-      <div class="insma__tags">
-        <textarea name="tags" cols="30" rows="1" placeholder="tags"></textarea>
+      <div class="sma__tags">
+        <textarea id="tags" cols="30" rows="1" placeholder="tags"></textarea>
       </div>
-      <div class="insma__btn modal__close"><img src="{% static 'smap/img/logo.svg' %}" alt=""></div>
+      <div class="sma__twoBtn">
+        <div id="inbtn" class="sma__twoBtn__btn"><img src="{% static 'smap/img/smaru.svg' %}" alt=""></div>
+        <div class="sma__twoBtn__btn modal__close"><img src="{% static 'smap/img/back.svg' %}" alt=""></div>
+      </div>
+    </div>
+    <div id="seasma" class="sma">
+      <p class="sma__lead">タグ検索</p>
+      <div class="sma__message">
+        <textarea id="seatag" cols="30" rows="15" placeholder="input one tag"></textarea>
+      </div>
+      <div class="sma__twoBtn">
+        <div id="seabtn" class="sma__twoBtn__btn"><img src="{% static 'smap/img/searchBtn.svg' %}" alt=""></div>
+        <div class="sma__twoBtn__btn modal__close"><img src="{% static 'smap/img/back.svg' %}" alt=""></div>
+      </div>
+    </div>
+    <div id="about" class="sma modal__close">
+      <p class="sma__lead">SMAPへようこそ</p>
+      <p class="sma__text">
+        SMapは、日常での新発見を目的としたコミュニケーションサービスです。<br>
+        位置情報を利用して、周囲の人々と発見をシェアしましょう！<br>
+        <br>
+        <span class="is-red">1.</span>MAP画面下の吹き出しボタンをタップ(クリック)し、呟きをタグ付けして発信してみましょう。(スマる)<br>
+        <span class="is-red">2.</span>MAPに表示されたマーカーをタップ(クリック)して周囲の呟き(スマり)を見てみましょう。新たな発見があるかも？<br>
+        <span class="is-red">3.</span>新たな発見が出来たら、[good]ボタンを押して応援してあげよう。<br>
+        <span class="is-red">add.</span>左上の検索アイコンをタップ(クリック)して、関連タグを検索をしてみよう。欲しい情報が見つかるかも？
+      </p>
     </div>
   </main>
   <footer class="bottomHud">
@@ -37,8 +64,8 @@
       <div class="smaru"><a class="modal__open" data-target="insma"><img src="{% static 'smap/img/btn.svg' %}" alt="sumaru"></a></div>
     </div>
     <div class="pinchBtn">
-      <div class="pinchBtn__each"><a href="#">Zoom</a></div>
-      <div class="pinchBtn__each"><a href="#">Wide</a></div>
+      <!--<div class="pinchBtn__each"><a href="#">Zoom</a></div>-->
+      <!--<div class="pinchBtn__each"><a href="#">Wide</a></div>-->
     </div>
   </footer>
 </body>

@@ -64,8 +64,8 @@ function getMarker() {
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
-      marker = makeMarker(name, {lat: lat,lng: lng});
-      marker.addListener('click', function() {
+      markers[i] = makeMarker(name, {lat: lat,lng: lng});
+      markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
           content: this.title
         });
@@ -76,12 +76,25 @@ function getMarker() {
 };
 
 /**
+* マーカーを全て削除する
+*/
+function removeMarkers() {
+  for(var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers.length = 0;
+}
+
+/**
 * 現在地を反映する
 */
 function initMap() {
   var opts = {
     zoom: 15,
-    center: new google.maps.LatLng(lat, lng)
+    center: new google.maps.LatLng(lat, lng),
+    mapTypeControl: false,
+    streetViewControl: false,
+    zoomControl: false
   };
   map = new google.maps.Map(mapArea, opts);
   $.getJSON("mapStyles.json", function(mapStyles) {

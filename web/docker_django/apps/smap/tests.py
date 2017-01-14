@@ -338,3 +338,30 @@ class Test(TestCase):
                                 content_type="application/json")
         name = Sumari.search_with_tags(tags=["sushi"]).first().name
         self.assertEqual(name, "くらずし")
+
+    def test_json_include_good(self):
+        data = [
+            {
+                "tags": {
+                    "meshi",
+                    "ramen"
+                },
+                "name": "山岡屋",
+                "message": "山岡屋うまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            },
+            {
+                "tags": {
+                    "meshi",
+                    "sushi"
+                },
+                "name": "すしろー",
+                "message": "すしうまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            }
+        ]
+        self.create_data(data)
+        json_obj = Sumari.search_with_tags(tags=["sushi"], to_json=True)[0]
+        self.assertEqual(type(json_obj["good"]), int)

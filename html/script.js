@@ -45,11 +45,12 @@ function getData() {
 /**
 * マーカー作成
 */
-function makeMarker(title, position) {
+function makeMarker(title, position, message) {
   return new google.maps.Marker({
     map: map,
     title: title,
     position: position,
+    message: message,
     animation: google.maps.Animation.DROP
   });
 }
@@ -64,10 +65,10 @@ function getMarker() {
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
-      markers[i] = makeMarker(name, {lat: lat,lng: lng});
+      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message);
       markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: this.title
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br>"
         });
         infoWindow.open(map, this);
       });

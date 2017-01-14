@@ -1,4 +1,7 @@
-from django.test import TestCase
+import json
+
+from django.test import TestCase, Client
+from django.core.urlresolvers import reverse
 from .models import Tag, Sumari
 
 class Test(TestCase):
@@ -114,3 +117,24 @@ class Test(TestCase):
 
         self.assertEqual(len(Sumari.objects.filter(tags__name__in=["USA"])), 0)
         self.assertEqual(len(Sumari.objects.filter(tags__name__in=["---", "0000"])), 0)
+
+    def test_post(self):
+        client = Client()
+        json_data = {
+            "name": "函館駅",
+            "position": {
+                "lat": 41.773809,
+                "lng": 140.726467
+            },
+            "message": "北海道最南端の駅（大嘘）",
+            "tags": [
+                "親の顔より見た光景",
+                "実家のような安心感",
+                "リスポーン地点"
+            ]
+        }
+        response = client.post(reverse('sumari'), json.dumps(json_data),
+                                content_type="application/json")
+
+        self.assertEqual(len(Sumari.objects.filter(tags__name__in=["親の顔より見た光景"])), 1)
+        self.assertEqual(len(Sumari.objects.filter(tags__name__in=["親の顔"])), 0)

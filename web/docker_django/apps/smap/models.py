@@ -20,3 +20,4 @@ class Sumari(models.Model):
     message = models.CharField(max_length=140)
     lat = models.DecimalField(max_digits=9, decimal_places=6)
     lng = models.DecimalField(max_digits=9, decimal_places=6)
+    good = models.IntegerField(default=0)

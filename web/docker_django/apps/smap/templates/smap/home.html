@@ -1,1 +1,46 @@
-Hello World!!
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Map Test</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="stylesheet" href="{% static 'smap/style.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="topHud">
+    <p class="topHud__title">Share-Map</div>
+  </header>
+  <main>
+    <div id="map"></div>
+    <script src="{% static 'smap/script.js' %}"></script>
+    <script
+      async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP7y4SQBi2YjkNenggVRJCkl8aWmTS38s&callback=getLocation">
+    </script>
+    <div id="insma" class="insma">
+      <p class="insma__lead">スマる</p>
+      <div class="insma__message">
+        <textarea name="message" cols="30" rows="15" placeholder="input すまり"></textarea>
+      </div>
+      <div class="insma__tags">
+        <textarea name="tags" cols="30" rows="1" placeholder="tags"></textarea>
+      </div>
+      <div class="insma__btn modal__close"><img src="{% static 'smap/img/logo.svg' %}" alt=""></div>
+    </div>
+  </main>
+  <footer class="bottomHud">
+    <div class="modal">
+      <div class="smaru"><a class="modal__open" data-target="insma"><img src="{% static 'smap/img/btn.svg' %}" alt="sumaru"></a></div>
+    </div>
+    <div class="pinchBtn">
+      <div class="pinchBtn__each"><a href="#">Zoom</a></div>
+      <div class="pinchBtn__each"><a href="#">Wide</a></div>
+    </div>
+  </footer>
+</body>
+<script src="{% static 'smap/modal.js' %}" type="text/javascript"></script>
+</html>

@@ -90,4 +90,4 @@ ENV/
 
 .idea/
 
-static/
+web/static/

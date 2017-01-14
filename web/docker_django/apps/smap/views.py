@@ -45,5 +45,11 @@ def smari(request):
         return JsonResponse(sumari_list, safe=False)
 
 
+def tag(request):
+    if request.method == "GET":
+        tag_list = [tag.name for tag in Tag.objects.all()]
+        return JsonResponse(tag_list, safe=False)
+
+
 def hakodate_mock(reqest):
     return JsonResponse({"": ""})

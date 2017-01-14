@@ -34,7 +34,8 @@ class Sumari(models.Model):
             "message": self.message,
             "tags": [
                 tag.name for tag in self.tags.all()
-            ]
+            ],
+            "good": self.good
         }
         return obj
 

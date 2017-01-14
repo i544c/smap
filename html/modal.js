@@ -30,6 +30,7 @@ var nowModalSyncer = null ;		//現在開かれているモーダルコンテン�
 
 //モーダルウィンドウを出現させるクリックイベント
 $(".modal__open").click( function(){
+	getLocation();
 	$('header').fadeOut();
 	$('footer').fadeOut();
 	$('body').css({
@@ -63,6 +64,31 @@ $(".modal__open").click( function(){
 
 	//[#modal__overlay]、または[#modal__close]をクリックしたら…
 	$( ".modal__overlay,.modal__close" ).unbind().click( function(){
+		var message = document.getElementById("message").value;
+		var tags = document.getElementById("tags").value;
+		if(!message || !tags) {
+			alert("messageとtagを入力してください");
+			return;
+		}
+
+		$.ajax({
+			url:"sumari",
+			type:"POST",
+			data: {
+				"position": {
+					"lat": lat,
+					"lng": lng
+				},
+				"message": message,
+				"tags": tags
+			}
+		}).done(function(res) {
+			console.log("success!");
+			message = "", tags = "";
+		}).fail(function(err) {
+			alert(err);
+			return;
+		});
 
 		//[#modal__content]と[#modal__overlay]をフェードアウトした後に…
 		$( "#" + target + ",.modal__overlay" ).fadeOut( "slow" , function(){

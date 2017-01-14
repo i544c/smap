@@ -64,7 +64,7 @@ function getMarker() {
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
-      marker = makeMarker(name, {lat,lng});
+      marker = makeMarker(name, {lat: lat,lng: lng});
       marker.addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
           content: this.title

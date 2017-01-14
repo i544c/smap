@@ -14,7 +14,6 @@ if(!navigator.geolocation) {
 function successFunc(position) {
   lat = position.coords.latitude;
   lng = position.coords.longitude;
-  console.log(lat, lng);
   initMap();
 };
 
@@ -44,20 +43,32 @@ function getData() {
 }
 
 /**
+* マーカー作成
+*/
+function makeMarker(title, position) {
+  return new google.maps.Marker({
+    map: map,
+    title: title,
+    position: position
+  });
+}
+
+/**
 * マーカーを取得する
 */
 function getMarker() {
   getData().then(function(data) {
     for(var i = 0; i < data.length; i++) {
+      var name = data[i]["name"];
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
-      console.log(lat, lng);
-      markers[i] = new google.maps.Marker({
-        map: map,
-        position: {
-          lat: lat,
-          lng: lng
-        }
+      var message = data[i]["message"];
+      marker = makeMarker(name, {lat,lng});
+      marker.addListener('click', function() {
+        infoWindow = new google.maps.InfoWindow({
+          content: this.title
+        });
+        infoWindow.open(map, this);
       });
     }
   });
@@ -72,6 +83,16 @@ function initMap() {
     center: new google.maps.LatLng(lat, lng)
   };
   map = new google.maps.Map(mapArea, opts);
+  var location = new google.maps.Circle({
+    strokeColor: '#1e90ff',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#1e90ff',
+    fillOpacity: 0.35,
+    map: map,
+    center: {lat:lat, lng:lng},
+    radius: 100
+  })
 
   getMarker();
 }

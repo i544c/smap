@@ -62,8 +62,7 @@ $(".modal__open").click( function(){
 	//コンテンツをフェードインする
 	$( nowModalSyncer ).fadeIn( "slow" ) ;
 
-	//[#modal__overlay]、または[#modal__close]をクリックしたら…
-	$( ".modal__overlay,.modal__close" ).unbind().click( function(){
+	$("#inbtn").click(function() {
 		var message = document.getElementById("message").value;
 		var tags = document.getElementById("tags").value;
 		if(!message || !tags) {
@@ -85,11 +84,18 @@ $(".modal__open").click( function(){
 		}).done(function(res) {
 			console.log("success!");
 			message = "", tags = "";
+			closeModal();
 		}).fail(function(err) {
 			alert(err);
 			return;
 		});
+	});
+	//[#modal__overlay]、または[#modal__close]をクリックしたら…
+	$( ".modal__close" ).unbind().click( function(){
+		closeModal();
+	} ) ;
 
+	function closeModal() {
 		//[#modal__content]と[#modal__overlay]をフェードアウトした後に…
 		$( "#" + target + ",.modal__overlay" ).fadeOut( "slow" , function(){
 
@@ -104,7 +110,7 @@ $(".modal__open").click( function(){
 		} ) ;
 		//現在のコンテンツ情報を削除
 			nowModalSyncer = null ;
-	} ) ;
+	}
 
 } ) ;
 

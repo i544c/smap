@@ -22,7 +22,7 @@
       async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP7y4SQBi2YjkNenggVRJCkl8aWmTS38s&callback=getLocation">
     </script>
-    <div id="insma" class="sma modal__close">
+    <div id="insma" class="sma">
       <p class="sma__lead">スマる</p>
       <div class="sma__message">
         <textarea id="message" cols="30" rows="15" placeholder="input すまり"></textarea>
@@ -30,14 +30,20 @@
       <div class="sma__tags">
         <textarea id="tags" cols="30" rows="1" placeholder="tags"></textarea>
       </div>
-      <div class="sma__btn modal__close"><img src="img/logo.svg" alt=""></div>
+      <div class="sma__twoBtn">
+        <div id="inbtn" class="sma__twoBtn__btn"><img src="img/smaru.svg" alt=""></div>
+        <div class="sma__twoBtn__btn modal__close"><img src="img/back.svg" alt=""></div>
+      </div>
     </div>
     <div id="seasma" class="sma">
       <p class="sma__lead">タグ検索</p>
       <div class="sma__message">
-        <textarea id="message" cols="30" rows="15" placeholder="input one tag"></textarea>
+        <textarea id="seatag" cols="30" rows="15" placeholder="input one tag"></textarea>
       </div>
-      <div class="sma__btn modal__close"><img src="img/logo.svg" alt=""></div>
+      <div class="sma__twoBtn">
+        <div id="seabtn" class="sma__twoBtn__btn"><img src="img/searchBtn.svg" alt=""></div>
+        <div class="sma__twoBtn__btn modal__close"><img src="img/back.svg" alt=""></div>
+      </div>
     </div>
     <div id="about" class="sma modal__close">
       <p class="sma__lead">SMAPへようこそ</p>

@@ -13,6 +13,9 @@ class Tag(models.Model):
             tag.save()
             return tag
 
+    def __str__(self):
+        return self.name
+
 
 class Sumari(models.Model):
     tags = models.ManyToManyField(Tag)
@@ -46,3 +49,6 @@ class Sumari(models.Model):
             return [sumari.to_json() for sumari in objects]
         else:
             return objects
+
+    def __str__(self):
+        return "「" + self.message + "」" + " " + ",".join(str(tag)for tag in self.tags.all())

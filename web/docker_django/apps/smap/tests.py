@@ -246,3 +246,31 @@ class Test(TestCase):
         self.assertSetEqual({sumari["name"] for sumari in response.json()}, {"山岡屋", "すしろー"})
         response = client.get('/sumari', {'tags': 'ramen'})
         self.assertSetEqual({sumari["name"] for sumari in response.json()}, {"山岡屋"})
+
+    def test_get_all_tag_view(self):
+        data = [
+            {
+                "tags": {
+                    "meshi",
+                    "ramen"
+                },
+                "name": "山岡屋",
+                "message": "山岡屋うまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            },
+            {
+                "tags": {
+                    "meshi",
+                    "sushi"
+                },
+                "name": "すしろー",
+                "message": "すしうまい",
+                "lat": 41.773809,
+                "lng": 140.726467,
+            }
+        ]
+        self.create_data(data)
+        client = Client()
+        response = client.get('/tag')
+        self.assertSetEqual({sumari for sumari in response.json()}, {"meshi", "ramen", "sushi"})

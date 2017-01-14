@@ -15,4 +15,12 @@ docker-compose up
 docker-compose up
 ```
 
+...And migration
+```
+docker-compose exec web bash
+(into web container)
+python manage.py makemigrations todo
+python manage.py migrate
+```
+
 Access http://localhost:8080

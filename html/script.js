@@ -84,6 +84,9 @@ function initMap() {
     center: new google.maps.LatLng(lat, lng)
   };
   map = new google.maps.Map(mapArea, opts);
+  $.getJSON("mapStyles.json", function(mapStyles) {
+    map.setOptions({styles:mapStyles});
+  });
   var location = new google.maps.Circle({
     strokeColor: '#1e90ff',
     strokeOpacity: 0.8,

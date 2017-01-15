@@ -121,9 +121,9 @@ function good(id) {
   $.ajax({
     url: "/sumari/" + id + "/good",
     type: "POST"
+  }).done(function(res) {
+    $("#" + id).text("👍" + res.good);
   });
-  var newid = id++;
-  $("#" + id).text("👍" + newid);
 }
 
 /**

@@ -119,7 +119,7 @@ function initMap() {
 * タグを全件取得
 */
 function getTags() {
-  getData("/tags/").then(function(data) {
+  getData("/tag").then(function(data) {
     var tagsArea = $("#tags");
     for(var i = 0; i < data.length; i++) {
       console.log(data[i]);

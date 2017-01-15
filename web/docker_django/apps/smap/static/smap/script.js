@@ -122,8 +122,8 @@ function good(id) {
     url: "/sumari/" + id + "/good",
     type: "POST"
   });
-  var new = id++;
-  $("#" + id).text("👍" + new);
+  var newid = id++;
+  $("#" + id).text("👍" + newid);
 }
 
 /**

@@ -74,18 +74,18 @@ $(".modal__open").click( function(){
 			url:"/sumari/",
 			type:"POST",
 			data : JSON.stringify(
- -				{
- -					"name": "",
- -					"position": {
- -						"lat": lat,
- -						"lng": lng
- -					},
- -					"message": message,
- -					"tags": tags
- -				}
- -			),
- -			contentType: 'application/JSON',
- -			dataType : 'JSON'
+ 				{
+ 					"name": "",
+ 					"position": {
+ 						"lat": lat,
+ 						"lng": lng
+ 					},
+ 					"message": message,
+ 					"tags": tags
+ 				}
+ 			),
+ 			contentType: 'application/JSON',
+ 			dataType : 'JSON'
 		}).done(function(res) {
 			console.log("success!");
 			message = "", tags = "";

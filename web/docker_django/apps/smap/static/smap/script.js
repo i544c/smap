@@ -98,7 +98,7 @@ function initMap() {
     zoomControl: false
   };
   map = new google.maps.Map(mapArea, opts);
-  $.getJSON("mapStyles.json", function(mapStyles) {
+  $.getJSON("/static/smap/mapStyles.json", function(mapStyles) {
     map.setOptions({styles:mapStyles});
   });
   var location = new google.maps.Circle({

@@ -123,7 +123,7 @@ function good(id) {
     type: "POST"
   });
   id++;
-  $("#" + id).value("👍" + id);
+  $("#" + id).text("👍" + id);
 }
 
 /**

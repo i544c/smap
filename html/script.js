@@ -35,9 +35,9 @@ function getLocation() {
 /**
 * データ取得
 */
-function getData() {
+function getData(url) {
   return $.ajax({
-    url: "/sumari",
+    url: url,
     type: "get"
   });
 }
@@ -59,7 +59,7 @@ function makeMarker(title, position, message) {
 * マーカーを取得する
 */
 function getMarker() {
-  getData().then(function(data) {
+  getData("/sumari").then(function(data) {
     for(var i = 0; i < data.length; i++) {
       var name = data[i]["name"];
       var lat = data[i]["position"]["lat"];
@@ -114,3 +114,17 @@ function initMap() {
 
   getMarker();
 }
+
+/**
+* 登録されているタグを全て取得
+*/
+function getTags() {
+  getData("/tag").then(function(data) {
+    var tagsArea = $("#tags");
+    var msg = "";
+    for(var i = 0; i < data.length; i++) {
+      msg = data[i];
+      tagsArea.append(msg);
+    }
+  });
+};

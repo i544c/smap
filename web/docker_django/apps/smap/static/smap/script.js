@@ -44,7 +44,7 @@ function getData(url) {
 
 function grepTags(url, tags) {
   return $.ajax({
-    url: url + "?tags=" + tags,
+    url: url + "?tags=" + window.checkTags,
     type: "get"
   });
 }

@@ -108,6 +108,7 @@ $(".modal__open").click( function(){
 			if(checks[i].checked) checkTags += checks[i].value + ",";
 		}
 		console.log(checkTags);
+		window.checkTags = checkTags;
 		if(checkTags = "") {
 			alert("tagを入力してください");
 			return;

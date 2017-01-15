@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Share Map</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <link rel="stylesheet" href="{% static 'smap/style.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -39,7 +39,8 @@
     <div id="seasma" class="sma">
       <p class="sma__lead">タグ検索</p>
       <div class="sma__message">
-        <textarea id="seatag" cols="30" rows="15" placeholder="input one tag"></textarea>
+        <!--<textarea id="seatag" cols="30" rows="15" placeholder="input one tag"></textarea>-->
+        <div id="findtags"></div>
       </div>
       <div class="sma__twoBtn">
         <div id="seabtn" class="sma__twoBtn__btn"><img src="{% static 'smap/img/searchBtn.svg' %}" alt=""></div>
@@ -49,7 +50,7 @@
     <div id="about" class="sma modal__close">
       <p class="sma__lead">SMAPへようこそ</p>
       <p class="sma__text">
-        SMapは、日常での新発見を目的としたコミュニケーションサービスです。<br>
+        SMAPは、日常での新発見を目的としたコミュニケーションサービスです。<br>
         位置情報を利用して、周囲の人々と発見をシェアしましょう！<br>
         <br>
         <span class="is-red">1.</span>MAP画面下の吹き出しボタンをタップ(クリック)し、呟きをタグ付けして発信してみましょう。(スマる)<br>
@@ -62,10 +63,6 @@
   <footer class="bottomHud">
     <div class="modal">
       <div class="smaru"><a class="modal__open" data-target="insma"><img src="{% static 'smap/img/btn.svg' %}" alt="sumaru"></a></div>
-    </div>
-    <div class="pinchBtn">
-      <!--<div class="pinchBtn__each"><a href="#">Zoom</a></div>-->
-      <!--<div class="pinchBtn__each"><a href="#">Wide</a></div>-->
     </div>
   </footer>
 </body>

@@ -46,6 +46,10 @@ $(".modal__open").click( function(){
 	if( typeof( target )=="undefined" || !target || target==null ){
 		return false ;
 	}
+	if(target == "seasma") {
+		console.log("タグ検索");
+		getTags();
+	}
 	nowModalSyncer = document.getElementById( target ) ;
 	if( nowModalSyncer == null ){
 		return false ;
@@ -98,20 +102,19 @@ $(".modal__open").click( function(){
 
 	$("#seabtn").click(function() {
 		console.log("タグ検索");
-		var seatag = document.getElementById("seatag").value;
-		console.log(seatag);
-		if(!seatag) {
+		var checks = document.getElementsByName("tags");
+		var checkTags = "";
+		for(var i = 0; i < checks.length; i++) {
+			if(checks[i].checked) checkTags += checks[i].value + ",";
+		}
+		console.log(checkTags);
+		window.checkTags = checkTags;
+		if(checkTags = "") {
 			alert("tagを入力してください");
 			return;
 		}
 
-		$.ajax({
-			url:"/sumari/",
-			type:"GET",
-			data: {
-				"tags": seatag
-			}
-		}).done(function(res) {
+		grepTags("/sumari/", checkTags).done(function(data) {
 			console.log("success!");
 			removeMarkers();
 			for(var i = 0; i < data.length; i++) {
@@ -127,7 +130,6 @@ $(".modal__open").click( function(){
 		      infoWindow.open(map, this);
 		    });
 		  }
-			seatag = "";
 			closeModal();
 		}).fail(function(err) {
 			alert(err);

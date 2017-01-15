@@ -45,11 +45,12 @@ function getData() {
 /**
 * マーカー作成
 */
-function makeMarker(title, position) {
+function makeMarker(title, position, message) {
   return new google.maps.Marker({
     map: map,
     title: title,
     position: position,
+    message: message,
     animation: google.maps.Animation.DROP
   });
 }
@@ -64,10 +65,10 @@ function getMarker() {
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
-      marker = makeMarker(name, {lat: lat,lng: lng});
-      marker.addListener('click', function() {
+      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message);
+      markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: this.title
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br>"
         });
         infoWindow.open(map, this);
       });
@@ -76,15 +77,28 @@ function getMarker() {
 };
 
 /**
+* マーカーを全て削除する
+*/
+function removeMarkers() {
+  for(var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers.length = 0;
+}
+
+/**
 * 現在地を反映する
 */
 function initMap() {
   var opts = {
     zoom: 15,
-    center: new google.maps.LatLng(lat, lng)
+    center: new google.maps.LatLng(lat, lng),
+    mapTypeControl: false,
+    streetViewControl: false,
+    zoomControl: false
   };
   map = new google.maps.Map(mapArea, opts);
-  $.getJSON("/static/smap/mapStyles.json", function(mapStyles) {
+  $.getJSON("mapStyles.json", function(mapStyles) {
     map.setOptions({styles:mapStyles});
   });
   var location = new google.maps.Circle({

@@ -1,4 +1,6 @@
 #map {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 100vh;
 }
@@ -113,7 +115,7 @@ a {
     z-index: 10;
     margin-top: 30px;
     padding: 0 5px;
-    font-size: 16px;
+    font-size: 12px;
     text-align: left;
     .is-red {
       color: #f55;

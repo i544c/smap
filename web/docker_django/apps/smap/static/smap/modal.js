@@ -102,6 +102,12 @@ $(".modal__open").click( function(){
 
 	$("#seabtn").click(function() {
 		console.log("タグ検索");
+		var checks = document.getElementsByName("tags");
+		var checkTags = "";
+		for(var i = 0; i < checks.length; i++) {
+			if(checks[i].checked) checkTags += checks[i].value + ",";
+		}
+		console.log(checkTags);
 		var seatag = document.getElementById("seatag").value;
 		console.log(seatag);
 		if(!seatag) {

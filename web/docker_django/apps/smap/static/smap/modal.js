@@ -102,9 +102,13 @@ $(".modal__open").click( function(){
 
 	$("#seabtn").click(function() {
 		console.log("タグ検索");
-		var seatag = document.getElementById("seatag").value;
-		console.log(seatag);
-		if(!seatag) {
+		var checks = document.getElementsByName("tags");
+		var checkTags = "";
+		for(var i = 0; i < checks.length; i++) {
+			if(checks[i].checked) checkTags += checks[i].value + ",";
+		}
+		console.log(checkTags);
+		if(checkTags = "") {
 			alert("tagを入力してください");
 			return;
 		}
@@ -113,7 +117,7 @@ $(".modal__open").click( function(){
 			url:"/sumari/",
 			type:"GET",
 			data: {
-				"tags": seatag
+				"tags": checkTags
 			}
 		}).done(function(res) {
 			console.log("success!");

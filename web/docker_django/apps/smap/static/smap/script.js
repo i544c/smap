@@ -77,12 +77,13 @@ function grepTags(url, tags) {
 /**
 * マーカー作成
 */
-function makeMarker(title, position, message) {
+function makeMarker(title, position, message, good) {
   return new google.maps.Marker({
     map: map,
     title: title,
     position: position,
     message: message,
+    good: good,
     animation: google.maps.Animation.DROP
   });
 }
@@ -98,10 +99,11 @@ function getMarker() {
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
-      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message);
+      var good = data[i]["good"];
+      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message, good);
       markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br>"
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button>" + this.good + "</button>"
         });
         infoWindow.open(map, this);
       });

@@ -129,7 +129,6 @@ $(".modal__open").click( function(){
 		      infoWindow.open(map, this);
 		    });
 		  }
-			seatag = "";
 			closeModal();
 		}).fail(function(err) {
 			alert(err);

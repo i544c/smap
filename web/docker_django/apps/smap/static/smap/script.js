@@ -103,7 +103,7 @@ function getMarker() {
       markers[i] = makeMarker(name, {lat: lat,lng: lng}, message, good);
       markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button>" + this.good + "</button>"
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button>👍" + this.good + "</button>"
         });
         infoWindow.open(map, this);
       });

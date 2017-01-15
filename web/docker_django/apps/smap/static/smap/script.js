@@ -105,7 +105,7 @@ function getMarker() {
       markers[i] = makeMarker(name, {lat: lat,lng: lng}, message, good, id);
       markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button onclick='good(" + this.id + ")'>👍" + this.good + "</button>"
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button id='" + this.id + "' onclick='good(" + this.id + ")'>👍" + this.good + "</button>"
         });
         infoWindow.open(map, this);
       });
@@ -118,6 +118,12 @@ function getMarker() {
 */
 function good(id) {
   console.log(id);
+  $.ajax({
+    url: "/sumari/" + id + "/good",
+    type: "POST"
+  });
+  id++;
+  $("#" + id).value("👍" + id);
 }
 
 /**

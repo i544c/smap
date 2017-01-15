@@ -110,7 +110,9 @@ function initMap() {
     map: map,
     center: {lat:lat, lng:lng},
     radius: 100
-  })
+  });
+
+  setInterval(getLocation, 1000);
 
   getMarker();
 }

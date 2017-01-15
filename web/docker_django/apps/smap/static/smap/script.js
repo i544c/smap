@@ -42,6 +42,16 @@ function getData(url) {
   });
 }
 
+function grepTags(url, tags) {
+  return $.ajax({
+    url: url,
+    type: "get",
+    data: {
+      "tags": tags
+    }
+  });
+}
+
 /**
 * マーカー作成
 */

@@ -113,10 +113,7 @@ $(".modal__open").click( function(){
 			return;
 		}
 
-		$.ajax({
-			url:"/sumari/?tags=" + checkTags,
-			type:"GET"
-		}).done(function(data) {
+		grepTags("/sumari/", checkTags).done(function(data) {
 			console.log("success!");
 			removeMarkers();
 			for(var i = 0; i < data.length; i++) {

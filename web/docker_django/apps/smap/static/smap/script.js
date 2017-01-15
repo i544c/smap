@@ -49,7 +49,7 @@ function updateLocation() {
     fillOpacity: 0.35,
     map: map,
     center: {lat:lat, lng:lng},
-    radius: 100
+    radius: 30
   });
 
   }, function() {
@@ -134,7 +134,7 @@ function initMap() {
     fillOpacity: 0.35,
     map: map,
     center: {lat:lat, lng:lng},
-    radius: 100
+    radius: 30
   });
 
   setInterval(updateLocation, 3000);

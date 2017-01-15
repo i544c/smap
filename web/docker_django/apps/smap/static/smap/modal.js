@@ -106,7 +106,7 @@ $(".modal__open").click( function(){
 		}
 
 		$.ajax({
-			url:"sumari",
+			url:"/sumari/",
 			type:"GET",
 			data: {
 				"tags": seatag

@@ -123,7 +123,7 @@ function getTags() {
     var tagsArea = $("#findtags");
     for(var i = 0; i < data.length; i++) {
       console.log(data[i]);
-      tagsArea.append(data[i]);
+      tagsArea.append("<input type='checkbox' name='tags' value='" + data[i] + "'>" + data[i] + "<br>");
     }
   });
 }

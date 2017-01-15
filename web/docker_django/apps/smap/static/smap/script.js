@@ -120,7 +120,7 @@ function initMap() {
 */
 function getTags() {
   getData("/tag").then(function(data) {
-    var tagsArea = $("#tags");
+    var tagsArea = $("#findtags");
     for(var i = 0; i < data.length; i++) {
       console.log(data[i]);
       tagsArea.append(data[i]);

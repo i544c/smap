@@ -77,13 +77,14 @@ function grepTags(url, tags) {
 /**
 * マーカー作成
 */
-function makeMarker(title, position, message, good) {
+function makeMarker(title, position, message, good, id) {
   return new google.maps.Marker({
     map: map,
     title: title,
     position: position,
     message: message,
     good: good,
+    id: id,
     animation: google.maps.Animation.DROP
   });
 }
@@ -100,16 +101,24 @@ function getMarker() {
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
       var good = data[i]["good"];
-      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message, good);
+      var id = data[i]["id"];
+      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message, good, id);
       markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button>👍" + this.good + "</button>"
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button onclick='good(" + this.id + ")'>👍" + this.good + "</button>"
         });
         infoWindow.open(map, this);
       });
     }
   });
 };
+
+/**
+* good
+*/
+function good(id) {
+  console.log(id);
+}
 
 /**
 * マーカーを全て削除する

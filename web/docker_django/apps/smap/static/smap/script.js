@@ -77,12 +77,14 @@ function grepTags(url, tags) {
 /**
 * マーカー作成
 */
-function makeMarker(title, position, message) {
+function makeMarker(title, position, message, good, id) {
   return new google.maps.Marker({
     map: map,
     title: title,
     position: position,
     message: message,
+    good: good,
+    id: id,
     animation: google.maps.Animation.DROP
   });
 }
@@ -93,20 +95,36 @@ function makeMarker(title, position, message) {
 function getMarker() {
   getData("/sumari/").then(function(data) {
     for(var i = 0; i < data.length; i++) {
+      console.log(data[i]);
       var name = data[i]["name"];
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];
       var message = data[i]["message"];
-      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message);
+      var good = data[i]["good"];
+      var id = data[i]["id"];
+      markers[i] = makeMarker(name, {lat: lat,lng: lng}, message, good, id);
       markers[i].addListener('click', function() {
         infoWindow = new google.maps.InfoWindow({
-          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br>"
+          content: "<b>" + this.title + "</b><br><p>" + this.message + "</br><button id='" + this.id + "' onclick='good(" + this.id + ")'>👍" + this.good + "</button>"
         });
         infoWindow.open(map, this);
       });
     }
   });
 };
+
+/**
+* good
+*/
+function good(id) {
+  console.log(id);
+  $.ajax({
+    url: "/sumari/" + id + "/good",
+    type: "POST"
+  }).done(function(res) {
+    $("#" + id).text("👍" + res.good);
+  });
+}
 
 /**
 * マーカーを全て削除する

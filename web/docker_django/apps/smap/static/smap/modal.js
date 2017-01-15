@@ -114,11 +114,8 @@ $(".modal__open").click( function(){
 		}
 
 		$.ajax({
-			url:"/sumari/",
-			type:"GET",
-			data: {
-				"tags": checkTags
-			}
+			url:"/sumari/?tags=" + checkTags,
+			type:"GET"
 		}).done(function(data) {
 			console.log("success!");
 			removeMarkers();

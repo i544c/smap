@@ -93,6 +93,7 @@ function makeMarker(title, position, message) {
 function getMarker() {
   getData("/sumari/").then(function(data) {
     for(var i = 0; i < data.length; i++) {
+      console.log(data[i]);
       var name = data[i]["name"];
       var lat = data[i]["position"]["lat"];
       var lng = data[i]["position"]["lng"];

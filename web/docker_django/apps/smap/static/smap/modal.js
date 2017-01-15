@@ -47,7 +47,6 @@ $(".modal__open").click( function(){
 		return false ;
 	}
 	if(target == "seasma") {
-		console.log("タグ検索");
 		getTags();
 	}
 	nowModalSyncer = document.getElementById( target ) ;
@@ -67,9 +66,9 @@ $(".modal__open").click( function(){
 	$( nowModalSyncer ).fadeIn( "slow" ) ;
 
 	$("#inbtn").click(function() {
-		var message = document.getElementById("message").value;
-		var tags = document.getElementById("tags").value;
-		if(!message || !tags) {
+		var message = document.getElementById("message");
+		var tags = document.getElementById("tags");
+		if(!message.value || !tags.value) {
 			alert("messageとtagを入力してください");
 			return;
 		}
@@ -84,15 +83,14 @@ $(".modal__open").click( function(){
  						"lat": lat,
  						"lng": lng
  					},
- 					"message": message,
- 					"tags": tags
+ 					"message": message.value,
+ 					"tags": tags.value
  				}
  			),
  			contentType: 'application/JSON',
  			dataType : 'JSON'
 		}).done(function(res) {
-			console.log("success!");
-			message = "", tags = "";
+			message.value = "", tags.value = "";
 			closeModal();
 		}).fail(function(err) {
 			alert(err);
@@ -101,13 +99,11 @@ $(".modal__open").click( function(){
 	});
 
 	$("#seabtn").click(function() {
-		console.log("タグ検索");
 		var checks = document.getElementsByName("tags");
 		var checkTags = "";
 		for(var i = 0; i < checks.length; i++) {
 			if(checks[i].checked) checkTags += checks[i].value + ",";
 		}
-		console.log(checkTags);
 		window.checkTags = checkTags;
 		if(checkTags = "") {
 			alert("tagを入力してください");

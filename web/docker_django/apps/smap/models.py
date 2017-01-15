@@ -21,8 +21,8 @@ class Sumari(models.Model):
     tags = models.ManyToManyField(Tag)
     name = models.CharField(max_length=32)
     message = models.CharField(max_length=140)
-    lat = models.DecimalField(max_digits=9, decimal_places=6)
-    lng = models.DecimalField(max_digits=9, decimal_places=6)
+    lat = models.DecimalField(max_digits=12, decimal_places=8)
+    lng = models.DecimalField(max_digits=12, decimal_places=8)
     good = models.IntegerField(default=0)
 
 

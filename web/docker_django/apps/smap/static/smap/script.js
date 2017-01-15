@@ -3,6 +3,7 @@ var isGeo = true; //端末が現在地取得に対応しているか
 var map;
 var lat = 35.709984, lng = 139.810703;
 var markers = [];
+var circle;
 if(!navigator.geolocation) {
   alert("あなたの端末では、現在地の取得が出来ません。");
   isGeo = false;
@@ -30,6 +31,30 @@ function errorFunc() {
 function getLocation() {
   if(!isGeo) return;
   navigator.geolocation.getCurrentPosition(successFunc, errorFunc);
+}
+
+
+function updateLocation() {
+  if(!isGeo) return;
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    console.log(lat, lng);
+    circle.setMap(null);
+    circle = new google.maps.Circle({
+    strokeColor: '#1e90ff',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#1e90ff',
+    fillOpacity: 0.35,
+    map: map,
+    center: {lat:lat, lng:lng},
+    radius: 100
+  });
+
+  }, function() {
+    console.log("現在地の取得に失敗...")
+  });
 }
 
 /**
@@ -101,7 +126,7 @@ function initMap() {
   $.getJSON("/static/smap/mapStyles.json", function(mapStyles) {
     map.setOptions({styles:mapStyles});
   });
-  var location = new google.maps.Circle({
+  circle = new google.maps.Circle({
     strokeColor: '#1e90ff',
     strokeOpacity: 0.8,
     strokeWeight: 2,
@@ -110,7 +135,9 @@ function initMap() {
     map: map,
     center: {lat:lat, lng:lng},
     radius: 100
-  })
+  });
+
+  setInterval(updateLocation, 3000);
 
   getMarker();
 }

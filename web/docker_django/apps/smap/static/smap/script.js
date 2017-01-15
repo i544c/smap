@@ -102,7 +102,8 @@ function initMap() {
     center: new google.maps.LatLng(lat, lng),
     mapTypeControl: false,
     streetViewControl: false,
-    zoomControl: false
+    zoomControl: false,
+    gestureHandling: 'greedy'
   };
   map = new google.maps.Map(mapArea, opts);
   $.getJSON("/static/smap/mapStyles.json", function(mapStyles) {

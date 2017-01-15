@@ -119,7 +119,7 @@ $(".modal__open").click( function(){
 			data: {
 				"tags": checkTags
 			}
-		}).done(function(res) {
+		}).done(function(data) {
 			console.log("success!");
 			removeMarkers();
 			for(var i = 0; i < data.length; i++) {

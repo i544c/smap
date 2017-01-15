@@ -108,9 +108,7 @@ $(".modal__open").click( function(){
 			if(checks[i].checked) checkTags += checks[i].value + ",";
 		}
 		console.log(checkTags);
-		var seatag = document.getElementById("seatag").value;
-		console.log(seatag);
-		if(!seatag) {
+		if(checkTags = "") {
 			alert("tagを入力してください");
 			return;
 		}
@@ -119,7 +117,7 @@ $(".modal__open").click( function(){
 			url:"/sumari/",
 			type:"GET",
 			data: {
-				"tags": seatag
+				"tags": checkTags
 			}
 		}).done(function(res) {
 			console.log("success!");

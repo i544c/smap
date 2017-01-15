@@ -108,6 +108,20 @@ $(".modal__open").click( function(){
 			}
 		}).done(function(res) {
 			console.log("success!");
+			removeMarkers();
+			for(var i = 0; i < data.length; i++) {
+		    var name = data[i]["name"];
+		    var lat = data[i]["position"]["lat"];
+		    var lng = data[i]["position"]["lng"];
+		    var message = data[i]["message"];
+		    markers[i] = makeMarker(name, {lat: lat,lng: lng});
+		    markers[i].addListener('click', function() {
+		      infoWindow = new google.maps.InfoWindow({
+		        content: this.title
+		      });
+		      infoWindow.open(map, this);
+		    });
+		  }
 			seatag = "";
 			closeModal();
 		}).fail(function(err) {

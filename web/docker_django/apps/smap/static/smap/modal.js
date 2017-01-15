@@ -46,6 +46,10 @@ $(".modal__open").click( function(){
 	if( typeof( target )=="undefined" || !target || target==null ){
 		return false ;
 	}
+	if(target == "seasma") {
+		console.log("タグ検索");
+		getTags();
+	}
 	nowModalSyncer = document.getElementById( target ) ;
 	if( nowModalSyncer == null ){
 		return false ;

@@ -45,15 +45,15 @@
 
     <google-map id="map"
       api-key=""
-      styles="{{mapStyle}}"
+      styles="[[mapStyle]]"
       disable-default-ui single-info-window />
-      <template is="dom-repeat" items="{{markers}}">
+      <template is="dom-repeat" items="[[markers]]">
         <google-map-marker
-          latitude="{{item.position.lat}}"
-          longitude="{{item.position.lng}}"
+          latitude="[[item.position.lat]]"
+          longitude="[[item.position.lng]]"
           animation="DROP" />
-          <h3>{{item.name}}</h3>
-          <p>{{item.message}}</p>
+          <h3>[[item.name]]</h3>
+          <p>[[item.message]]</p>
         </google-map-marker>
       </template>
     </google-map>
@@ -67,9 +67,9 @@
       <paper-input label="タグ"></paper-input>
       <paper-textarea label="内容"></paper-textarea>
       <div class="center">
-        <paper-button raised on-click="_toggleSmaru" disabled="{{sendingSmaru}}">閉じる</paper-button>
-        <paper-button class="blue" raised on-click="_sendSmaru" disabled="{{sendingSmaru}}">すまる</paper-button>
-        <paper-spinner active="{{sendingSmaru}}"></paper-spinner>
+        <paper-button raised on-click="_toggleSmaru" disabled="[[sendingSmaru]]">閉じる</paper-button>
+        <paper-button class="blue" raised on-click="_sendSmaru" disabled="[[sendingSmaru]]">すまる</paper-button>
+        <paper-spinner active="[[sendingSmaru]]"></paper-spinner>
       </div>
     </paper-dialog>
 

@@ -12,11 +12,6 @@
 <dom-module id="x-map">
   <template>
     <style>
-    .bottom {
-      width: 100%;
-      position: fixed;
-      bottom: 0;
-    }
     .center {
       @apply(--layout-horizontal);
       @apply(--layout-center-justified);
@@ -24,6 +19,10 @@
     #smaruIcon {
       width: 80px;
       height: 80px;
+      bottom: 80px;
+      margin-left: 45%;
+      margin-left: -webkit-calc(50% - 40px);
+      margin-left: calc(50% - 40px);
     }
     .blue {
       color: white;
@@ -58,11 +57,7 @@
       </template>
     </google-map>
 
-    <div class="bottom">
-      <div class="center">
-        <paper-icon-button id="smaruIcon" src="smaru.svg" on-click="_toggleSmaru"></paper-icon-button>
-      </div>
-    </div>
+    <paper-icon-button id="smaruIcon" src="smaru.svg" on-click="_toggleSmaru"></paper-icon-button>
     <paper-dialog id="smaruDialog" modal>
       <paper-input label="タグ"></paper-input>
       <paper-textarea label="内容"></paper-textarea>

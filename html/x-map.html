@@ -34,12 +34,18 @@
 
     <iron-ajax
       auto
+      url="map-style.json"
+      last-response="{{mapStyle}}"
+    /></iron-ajax>
+    <iron-ajax
+      auto
       url="markers.json"
       last-response="{{markers}}"
     /></iron-ajax>
 
     <google-map id="map"
       api-key=""
+      styles="{{mapStyle}}"
       disable-default-ui single-info-window />
       <template is="dom-repeat" items="{{markers}}">
         <google-map-marker

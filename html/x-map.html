@@ -28,9 +28,10 @@
       @apply(--layout-center-justified);
     }
     #smaruIcon {
+      position: fixed;
+      bottom: 0;
       width: 80px;
       height: 80px;
-      bottom: 80px;
       margin-left: 45%;
       margin-left: -webkit-calc(50% - 40px);
       margin-left: calc(50% - 40px);
@@ -69,13 +70,13 @@
       </template>
     </google-map>
 
-    <paper-icon-button id="drawerIcon" icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+    <paper-icon-button id="drawerIcon" icon="menu" on-click="_toggleDrawer"></paper-icon-button>
     <app-drawer id="drawer"></app-drawer>
 
     <paper-icon-button id="smaruIcon" src="smaru.svg" on-click="_toggleSmaru"></paper-icon-button>
     <paper-dialog id="smaruDialog" modal>
-      <paper-input label="タグ"></paper-input>
-      <paper-textarea label="内容"></paper-textarea>
+      <paper-input id="tag" label="タグ"></paper-input>
+      <paper-textarea id="message" label="内容"></paper-textarea>
       <div class="center">
         <paper-button raised on-click="_toggleSmaru" disabled="[[sendingSmaru]]">閉じる</paper-button>
         <paper-button class="blue" raised on-click="_sendSmaru" disabled="[[sendingSmaru]]">すまる</paper-button>
@@ -131,6 +132,13 @@
     },
 
     /**
+    * drawerの開け閉め
+    */
+    _toggleDrawer: function() {
+      this.$.drawer.toggle();
+    },
+
+    /**
     * すまるボタン
     */
     _toggleSmaru: function() {
@@ -146,6 +154,9 @@
         this.sendingSmaru = false;
         this.$.smaruDialog.toggle();
         this.$.toast.show({text: "送信したつもり"});
+        //inputの中身を消す
+        this.$.tag.value = "";
+        this.$.message.value = "";
       }, 5000);
     }
   });

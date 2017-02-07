@@ -11,6 +11,8 @@
 <link rel="import" href="bower_components/paper-button/paper-button.html">
 <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
 
+<link rel="import" href="x-drawer.html">
+
 <dom-module id="x-map">
   <template>
     <style>
@@ -50,7 +52,7 @@
     /></iron-ajax>
     <iron-ajax
       auto
-      url="markers.json"
+      url="sample/markers.json"
       last-response="{{markers}}"
     /></iron-ajax>
 
@@ -71,7 +73,9 @@
     </google-map>
 
     <paper-icon-button id="drawerIcon" icon="menu" on-click="_toggleDrawer"></paper-icon-button>
-    <app-drawer id="drawer"></app-drawer>
+    <app-drawer id="drawer">
+      <x-drawer></x-drawer>
+    </app-drawer>
 
     <paper-icon-button id="smaruIcon" src="smaru.svg" on-click="_toggleSmaru"></paper-icon-button>
     <paper-dialog id="smaruDialog" modal>

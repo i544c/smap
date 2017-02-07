@@ -1,0 +1,37 @@
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+
+<dom-module id="x-drawer">
+  <template>
+    <style>
+    .vertical {
+      display: block;
+    }
+    </style>
+
+    <iron-ajax
+      auto
+      url="sample/tags.json"
+      last-response="{{tags}}"
+    /></iron-ajax>
+
+    <template is="dom-repeat" items="[[tags]]">
+      <div class="vertical">
+        <paper-checkbox checked="{{item.checked}}" on-change="_change">[[item.tag]]</paper-checkbox>
+      </div>
+    </template>
+  </template>
+
+  <script>
+  Polymer({
+    is: 'x-drawer',
+    _change: function() {
+      var str = "";
+      for(var i = 0; i < this.tags.length; i++) {
+        if(this.tags[i].checked) str += this.tags[i].tag + ","
+      }
+      console.log(str);
+    }
+  });
+  </script>
+</dom-module>

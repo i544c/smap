@@ -56,6 +56,7 @@
     <google-map id="map"
       api-key=""
       styles="[[mapStyle]]"
+      gesture-handling="greedy"
       disable-default-ui single-info-window />
       <template is="dom-repeat" items="[[markers]]">
         <google-map-marker
